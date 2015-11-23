@@ -1,0 +1,30 @@
+<MyPaintWidget>
+	c1: circle_1
+    c2: circle_2
+    Button:
+    	text: 'hello'
+    	size_hint: .5, .25
+    	pos: 20, 20
+    	on_press:
+    		root.new()
+	Circle1:
+        id: circle_1
+        center: self.parent.center                        
+    Circle2:
+        id: circle_2
+        size_hint: .9, .90
+        pos: 20, 20
+
+
+<Circle1>:
+    size: 25, 25
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Circle2>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size

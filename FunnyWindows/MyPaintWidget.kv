@@ -1,0 +1,25 @@
+<MyPaintWidget>
+	c1: circle_1
+	c2: circle_2
+
+	Circle1:
+		id: circle_1
+		center: self.parent.center
+	Circle2:
+		id: circle_2
+		x: root.x
+		y: root.y
+
+<Circle1>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<Circle2>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size

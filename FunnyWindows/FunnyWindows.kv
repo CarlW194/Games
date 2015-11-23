@@ -1,0 +1,243 @@
+<MenuScreen>:
+	btn: begin
+	
+    Button:
+        opacity: 1 if self.state == 'normal' else .5
+		id: begin
+		text: 'Begin Funny Windows'
+        background_normal: 'Bebras.png'
+        background_down: 'BebrasClick.png'
+		on_press:
+			root.manager.transition.direction = 'left'
+			root.manager.current = 'game01'
+		color: (0,0,0)
+
+<Game01Screen>
+    BoxLayout:
+        size_hint: 1, 1
+        orientation: 'vertical'
+        spacing: '5dp'
+        Label:
+            text: "Funny Windows"
+            font_size: 50
+        Label:
+            halign: 'left'
+            text: "The windows of a boat are either clear or lightly tinted."
+            font_size: 20
+            top: root.top - 150
+        Label:
+            halign: 'left'
+            text: "Standing beside the boat you can look through two opposite windows at once. Depending on the colours of both windows they will appear to have a new colour:"
+            font_size: 20
+            text_size: self.width, None
+            top: root.top -125
+        BoxLayout
+            Image:
+                source: "Binary0.png"
+                size: 360, 360
+            Image:
+                source: "Binary1.png"
+                size: 360, 360
+            Image:
+                source: "Binary01.png"
+                size: 360, 360
+            Image:
+                source: "Binary2.png"
+                size: 360, 360
+        BoxLayout:
+            Button:
+                text: 'Quit'
+                size_hint: .5, .5
+                pos: 0.5, 1
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
+            Button:
+                text: 'Next'
+                size_hint: .5, .5
+                pos: 0.5, 1
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'leftboatview'
+
+<LeftBoatViewScreen>
+    BoxLayout:
+        size_hint: 1, 1
+        orientation: 'vertical'
+        spacing: '5dp'
+        Label:
+            text: "Funny Windows"
+            font_size: 50
+        Label:
+            text: "Captain Krysta has given you drawings of her boat showing which windows are clear and which are lightly tinted:" 
+        BoxLayout
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size 
+            Image:
+                source: "BoatLeft.png"
+                size: 720, 580
+            Image:
+                source: "BoatRight.png"
+                size: 720, 580
+        BoxLayout:
+            padding: [0 , 75, 0, 0]
+            Button:
+                text: 'Quit'
+                size_hint: .5, .5
+                pos: 0.25, .5
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
+            Button:
+                text: 'Page Before'
+                size_hint: .5, .5
+                pos: 0.25, .5
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'game01'
+            Button:
+                text: 'Next'
+                size_hint: .5, .5
+                pos: 0.25, .5
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'emptyboat'
+
+<EmptyBoatScreen>
+    c1: circle_1
+    c2: circle_2
+    c3: circle_3
+    c4: circle_4
+    c5: circle_5
+    c6: circle_6
+    c7: circle_7
+    c8: circle_8
+
+    BoxLayout:
+        size_hint: 1, 1
+        orientation: 'vertical'
+        Label:
+            text: "Funny Windows"
+            font_size: 50
+        BoxLayout:
+            orientation: 'horizontal'
+            Circle1:
+                id: circle_1
+                center: self.parent.center                        
+            Circle2:
+                id: circle_2
+                center: self.parent.center
+            Circle3:
+                id: circle_3
+                center: self.parent.center
+            Circle4:
+                id: circle_4
+                center: self.parent.center
+            Circle5:
+                id: circle_5
+                center: self.parent.center
+            Circle6:
+                id: circle_6
+                center: self.parent.center
+            Circle7:
+                id: circle_7
+                center: self.parent.center
+            Circle8:
+                id: circle_8
+                center: self.parent.center
+        BoxLayout:
+            padding: [0 , 75, 0, 0]
+            Button:
+                text: 'Quit'
+                size_hint: .5, .5
+                pos: 0.25, .5
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
+            Button:
+                text: 'Page Before'
+                size_hint: .5, .5
+                pos: 0.25, .5
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'leftboatview'
+            Button:
+                text: 'Finish'
+                size_hint: .5, .5
+                pos: 0.25, .5
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'finish'
+
+
+<Circle1>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Circle2>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Circle3>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Circle4>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Circle5>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Circle6>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Circle7>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Circle8>:
+    size: 25, 25 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+                
+<FinishScreen>
+    BoxLayout:
+        size_hint: 1, 1
+        orientation: 'vertical'
+        Label:
+            text: "Funny Windows"
+            font_size: 50
+
+        BoxLayout:
+            padding: [0 , 75, 0, 0]
+            Button:
+                text: 'Quit'
+                size_hint: .5, .5
+                pos: 0.25, .5
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
+
