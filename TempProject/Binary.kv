@@ -1,0 +1,46 @@
+<MainScreen>
+	txt1: input1
+	txt2: input2
+	btn1: Button
+	result_Label: User
+	GridLayout:
+		rows: 4
+		cols: 1
+		padding: 10
+		padding: 10
+		GridLayout:
+			rows: 1
+			cols: 2
+			padding: 10
+			padding: 10
+			Image:
+				source: "Images/BoatLeft.png"
+			Image:
+				source: "Images/BoatRight.png"
+		GridLayout:
+			rows: 1
+			cols: 2
+			padding: 10
+			padding: 10
+			TextInput:
+				id: input1
+				font_size: 20
+				multiline: False
+			TextInput:
+				id: input2
+				font_size: 20
+				multiline: False
+		GridLayout:
+			rows: 1
+			cols: 2
+			padding: 10
+			padding: 10
+			Button:
+				id: Button
+				text: 'Result'
+				on_press:
+					root.buttonClicked()
+		Label:
+			id: User
+			text: "Result"
+		
